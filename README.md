@@ -21,7 +21,7 @@ For ease of use, included *.bat files for Windows users so far. Add the video-to
 ./split-video --input-file-path path-to-the-file-to-split.mp4 --output-dir ./directory/to/put/divided/files/in/
 ```
 
-### Crop video into 4/5 aspect ration focusing on the centre
+### Crop video into 4:5 aspect ratio focusing on the centre
 
 ```
 ./crop-video --input-file-path ./path-to-the-file-to-split.mp4 --output-file-path ./path-where-to-save-the-cropped-output.mp4
