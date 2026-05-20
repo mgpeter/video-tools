@@ -2,7 +2,7 @@ import argparse
 from moviepy import VideoFileClip
 import os
 
-def split_video_into_chunks(input_file_path, output_dir, chunk_length=15):
+def split_video_into_chunks(input_file_path, output_dir, chunk_length=30):
     # Ensure the output directory exists
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -28,7 +28,7 @@ def split_video_into_chunks(input_file_path, output_dir, chunk_length=15):
 
 def main():
     # Create the parser
-    parser = argparse.ArgumentParser(description="Split an MP4 file into chunks of up to 15 seconds each.")
+    parser = argparse.ArgumentParser(description="Split an MP4 file into chunks of up to 30 seconds each.")
     
     # Add the arguments as optional
     parser.add_argument("--input-file-path", required=True, help="Path to the input MP4 file.")
