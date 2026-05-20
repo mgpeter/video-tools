@@ -1,5 +1,5 @@
 import argparse
-from moviepy.editor import VideoFileClip
+from moviepy import VideoFileClip
 import os
 
 def split_video_into_chunks(input_file_path, output_dir, chunk_length=15):
@@ -17,7 +17,7 @@ def split_video_into_chunks(input_file_path, output_dir, chunk_length=15):
     for i in range(num_chunks):
         start_time = i * chunk_length
         end_time = min((i + 1) * chunk_length, video.duration)
-        chunk = video.subclip(start_time, end_time)
+        chunk = video.subclipped(start_time, end_time)
         chunk_file_path = os.path.join(output_dir, f"chunk_{i+1:03d}.mp4")
         chunk.write_videofile(chunk_file_path, codec="libx264", audio_codec="aac")
         

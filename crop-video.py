@@ -1,4 +1,4 @@
-from moviepy.editor import VideoFileClip
+from moviepy import VideoFileClip
 import argparse
 
 def crop_video_to_aspect_ratio(input_file_path, output_file_path, target_aspect_ratio=4/5):
@@ -28,7 +28,7 @@ def crop_video_to_aspect_ratio(input_file_path, output_file_path, target_aspect_
     y1 = crop_y_center - new_height / 2
     
     # Perform the crop
-    cropped_video = video.crop(x1=x1, y1=y1, width=new_width, height=new_height)
+    cropped_video = video.cropped(x1=x1, y1=y1, width=new_width, height=new_height)
     
     # Write the output file
     cropped_video.write_videofile(output_file_path, codec="libx264", audio_codec="aac")
